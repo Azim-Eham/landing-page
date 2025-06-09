@@ -6,7 +6,7 @@ const initialState = {
 };
 
 const uiSlice = createSlice({
-    name: ui,
+    name: 'ui',
     initialState,
     reducers: {
         toggleMenu: (state) => {
