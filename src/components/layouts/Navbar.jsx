@@ -50,7 +50,7 @@ const Navbar = () => {
                     {navItems.map((item, index) => (
                         <motion.button
                         key={index}
-                        onClick={scrollToSection(item.href)}
+                        onClick={() => scrollToSection(item.href)}
                         className={`transition-colors duration-200 hover:text-amber-600 ${scrollPosition > 50 ? 'text-gray-700' : 'text-white'}`}
                         whileHover={{y: -2}}
                         whileTap={{y: 0}}>

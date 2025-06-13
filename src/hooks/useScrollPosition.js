@@ -8,10 +8,14 @@ export const useScrollPosition = () => {
             setScrollPosition(window.pageYOffset);
         };
 
-        window.addEventListener('scroll', updatePosition);
+        const handleScroll = () => {
+            requestAnimationFrame(updatePosition);
+        };
+
+        window.addEventListener('scroll', handleScroll);
         updatePosition();
 
-        return() => window.removeEventListener('scroll', updatePosition);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return scrollPosition;

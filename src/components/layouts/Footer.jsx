@@ -18,10 +18,8 @@ const Footer = () => {
 
   const scrollToSection = (href) => {
     const element = document.querySelector(href);
-    if(element){
-      element.scrollToView({behavior: 'smooth'});
-    }
-  }
+    element.scrollIntoView({behavior: 'smooth'});
+  };
 
   return (
     <footer className='bg-stone-900 text-white'>
