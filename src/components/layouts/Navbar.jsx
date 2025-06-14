@@ -23,8 +23,10 @@ const Navbar = () => {
     const scrollToSection = (href) => {
         const element = document.querySelector(href);
         if(element){
-            element.scrollIntoView({behavior: 'smooth'});
             dispatch(closeMenu());
+            setTimeout(() => {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
     };
   return (
