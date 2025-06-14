@@ -46,7 +46,7 @@ const Footer = () => {
             <div className='space-y-3'>
               <div className='flex items-center space-x-3 text-gray-300'>
                 <MapPin className='h-5 w-5 text-amber-500' />
-                <span>Chittagong, Bangladesh</span>
+                <span>123 Coffee Street, Downtown District</span>
               </div>
               <div className='flex items-center space-x-3 text-gray-300'>
                   <Phone className='h-5 w-5 text-amber-500' />
@@ -89,11 +89,11 @@ const Footer = () => {
             <div className='space-y-2 text-gray-300 mb-8'>
               <div className='flex justify-between'>
                 <span>Mon - Fri</span>
-                <span>6:00 AM - 9:00 PM</span>
+                <span>06:00 AM - 09:00 PM</span>
               </div>
               <div className="flex justify-between">
                 <span>Sat - Sun</span>
-                <span>7:00 AM - 10:00 PM</span>
+                <span>07:00 AM - 10:00 PM</span>
               </div>
             </div>
 
