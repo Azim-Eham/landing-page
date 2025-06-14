@@ -92,13 +92,14 @@ const Navbar = () => {
         animate={{height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0}}
         transition={{duration: 0.3}}
         style={{overflow: 'hidden'}}>
-            <div className='px-4 py-4 sapce-y-4'>
+            <div className='px-4 py-4 space-y-4'>
                 {navItems.map((item, index) => (
                     <motion.button
                     key={index}
                     onClick={() => scrollToSection(item.href)}
-                    className={`block w-full text-left transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}
-                    whileHover={{x: 10}}>
+                    className={`block w-full text-left py-2 transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}
+                    whileHover={{y: -2}}
+                    whileTap={{y: 0}}>
                         {item.name}
                     </motion.button>
                 ))}
