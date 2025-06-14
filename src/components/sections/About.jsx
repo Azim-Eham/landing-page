@@ -28,7 +28,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20 bg-white dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Text Content */}
@@ -38,11 +38,11 @@ const About = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-200 mb-6 transition-colors">
               Our Story & Mission
             </h2>
 
-            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+            <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed transition-colors">
               <p>
                 Founded in 2015, Azim Coffee Shop began as a dream to create a space where 
                 exceptional coffee meets genuine community. Our journey started with a 
@@ -95,7 +95,7 @@ const About = () => {
 
             {/* Floating Stats */}
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-6 border border-gray-100"
+              className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-6 border border-gray-600 transition-colors"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -103,7 +103,7 @@ const About = () => {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-amber-600 mb-1">8+</div>
-                <div className="text-sm text-gray-600">Years of Excellence</div>
+                <div className="text-sm text-gray-600 dark:text-gray-300 transition-colors">Years of Excellence</div>
               </div>
             </motion.div>
 
@@ -140,8 +140,8 @@ const About = () => {
               <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 text-amber-600 rounded-2xl mb-4 group-hover:bg-amber-600 group-hover:text-white transition-all duration-300">
                 {feature.icon}
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-              <p className="text-gray-600">{feature.description}</p>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-gray-300 transition-colors mb-2">{feature.title}</h3>
+              <p className="text-gray-600 dark:text-gray-500 transition-colors">{feature.description}</p>
             </motion.div>
           ))}
         </motion.div>

@@ -62,7 +62,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section id="reviews" className="py-20 bg-gradient-to-br from-amber-50 to-orange-50">
+    <section id="reviews" className="py-20 bg-gradient-to-br from-amber-50 to-orange-50 dark:from-stone-900 dark:to-gray-800 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -71,28 +71,28 @@ const Testimonials = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4 dark:text-gray-200 transition-colors">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 transition-colors max-w-2xl mx-auto">
             Don't just take our word for it - hear from the amazing people 
             who make our coffee shop a community.
           </p>
         </motion.div>
 
         <div className="relative max-w-4xl mx-auto">
-          <button onClick={prevTestimonial} className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+          <button onClick={prevTestimonial} className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-300 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
             <ChevronLeft className="h-6 w-6" />
           </button>
 
-          <button onClick={nextTestimonial} className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white hover:bg-gray-50 text-gray-800 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
+          <button onClick={nextTestimonial} className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600 text-gray-800 dark:text-gray-300 p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110">
             <ChevronRight className="h-6 w-6" />
           </button>
 
           <AnimatePresence mode="wait">
             <motion.div
               key={currentIndex}
-              className="bg-white rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden"
+              className="bg-white dark:bg-gray-800 transition-colors rounded-3xl shadow-xl p-8 md:p-12 relative overflow-hidden"
               initial={{ opacity: 0, x: 100 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
@@ -107,7 +107,7 @@ const Testimonials = () => {
                   <img
                     src={testimonials[currentIndex].image}
                     alt={testimonials[currentIndex].name}
-                    className="w-24 h-24 rounded-full object-cover border-4 border-amber-100"
+                    className="w-24 h-24 rounded-full object-cover border-4 border-amber-100 dark:border-amber-300 transition-colors"
                   />
                 </motion.div>
 
@@ -118,15 +118,15 @@ const Testimonials = () => {
                     ))}
                   </motion.div>
 
-                  <motion.blockquote className="text-lg md:text-xl text-gray-700 mb-6 leading-relaxed italic" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
+                  <motion.blockquote className="text-lg md:text-xl text-gray-700 dark:text-gray-400 transition-colors mb-6 leading-relaxed italic" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.4 }}>
                     "{testimonials[currentIndex].text}"
                   </motion.blockquote>
 
                   <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.5 }}>
-                    <div className="font-bold text-xl text-gray-900">
+                    <div className="font-bold text-xl text-gray-900 dark:text-gray-200 transition-colors mb-1">
                       {testimonials[currentIndex].name}
                     </div>
-                    <div className="text-amber-600 font-medium">
+                    <div className="text-amber-600 dark:text-amber-500 transition-colors font-medium">
                       {testimonials[currentIndex].role}
                     </div>
                   </motion.div>
@@ -154,12 +154,12 @@ const Testimonials = () => {
           ].map((stat, index) => (
             <motion.div
               key={index}
-              className="text-center bg-white rounded-2xl p-8 shadow-lg"
+              className="text-center bg-white dark:bg-gray-800 transition-colors rounded-2xl p-8 shadow-lg"
               whileHover={{ y: -5 }}
               transition={{ duration: 0.3 }}
             >
               <div className="text-4xl font-bold text-amber-600 mb-2">{stat.number}</div>
-              <div className="text-gray-600 font-medium">{stat.label}</div>
+              <div className="text-gray-600 dark:text-gray-300 transition-colors font-medium">{stat.label}</div>
             </motion.div>
           ))}
         </motion.div>

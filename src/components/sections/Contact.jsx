@@ -27,7 +27,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-stone-50">
+    <section id="contact" className="py-20 bg-stone-50 dark:bg-gray-900 transition-colors">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="text-center mb-16"
@@ -36,10 +36,10 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-200 transition-colors mb-4">
             Visit Us Today
           </h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-600 dark:text-gray-400 transition-colors max-w-2xl mx-auto">
             Come experience the perfect blend of great coffee and warm hospitality. 
             We can't wait to welcome you to our coffee family.
           </p>
@@ -48,72 +48,72 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
           <motion.div
-            className="bg-white rounded-3xl shadow-xl p-8"
+            className="bg-white dark:bg-gray-800 transition-colors rounded-3xl shadow-xl p-8"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Send us a message</h3>
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-200 transition-colors mb-6">Send us a message</h3>
 
             <form className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 dark:text-gray-400 transition-colors mb-2">
                     First Name
                   </label>
                   <input
                     type="text"
                     id="firstName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
                     placeholder="Your first name"
                   />
                 </div>
                 <div>
-                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="lastName" className="block text-sm font-medium text-gray-700 dark:text-gray-400 transition-colors mb-2">
                     Last Name
                   </label>
                   <input
                     type="text"
                     id="lastName"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
+                    className="w-full px-4 py-3 border dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
                     placeholder="Your last name"
                   />
                 </div>
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-400 transition-colors mb-2">
                   Email
                 </label>
                 <input
                   type="email"
                   id="email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-400 transition-colors mb-2">
                   Subject
                 </label>
                 <input
                   type="text"
                   id="subject"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
+                  className="w-full px-4 py-3 border dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200"
                   placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-400 transition-colors mb-2">
                   Message
                 </label>
                 <textarea
                   id="message"
                   rows="4"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 resize-none"
+                  className="w-full px-4 py-3 border dark:text-gray-300 border-gray-300 dark:border-gray-600 rounded-xl focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-200 resize-none"
                   placeholder="Tell us what's on your mind..."
                 ></textarea>
               </div>
@@ -143,16 +143,16 @@ const Contact = () => {
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={index}
-                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                  className="bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
                   whileHover={{ y: -5 }}
                 >
                   <div className="flex items-center space-x-3 mb-3">
                     <div className="text-amber-600">{info.icon}</div>
-                    <h4 className="font-bold text-gray-900">{info.title}</h4>
+                    <h4 className="font-bold text-gray-900 dark:text-gray-200 transition-colors">{info.title}</h4>
                   </div>
                   <div className="space-y-1">
                     {info.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600 text-sm">
+                      <p key={i} className="text-gray-600 dark:text-gray-400 transition-colors text-sm">
                         {detail}
                       </p>
                     ))}
@@ -163,7 +163,7 @@ const Contact = () => {
 
             {/* Map */}
             <motion.div
-              className="bg-white rounded-3xl shadow-xl overflow-hidden h-64"
+              className="bg-white  rounded-3xl shadow-xl overflow-hidden h-64"
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}

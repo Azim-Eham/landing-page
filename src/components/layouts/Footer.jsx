@@ -71,7 +71,7 @@ const Footer = () => {
                 key={index}>
                   <motion.button
                   onClick={() => scrollToSection(link.href)}
-                  className="text-gray-300 hover:text-amber-500 transition-colors duration-200 block"
+                  className="text-gray-300 hover:text-amber-500 transition-colors duration-200 block cursor-pointer"
                   whileHover={{ x: 5 }}>
                     {link.name}
                   </motion.button>
@@ -104,7 +104,7 @@ const Footer = () => {
                   <motion.a
                   key={index}
                   href={link.href}
-                  className='bg-stone-800 hover:bg-amber-600 p-3 rounded-full transition-all duration-300'
+                  className='bg-stone-800 hover:bg-amber-600 p-3 rounded-full transition-all duration-300 cursor-pointer'
                   whileHover={{scale: 1.1, y: -2}}
                   whileTap={{scale: 0.95}}
                   aria-label={link.name}>

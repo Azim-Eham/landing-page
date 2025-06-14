@@ -82,7 +82,7 @@ const Menu = () => {
 
   return (
     <section id='menu'
-    className='py-20 bg-gradient-to-br from-stone-50 to-amber-50'>
+    className='py-20 bg-gradient-to-br from-stone-50 to-amber-50 dark:from-stone-900 dark:to-gray-800 transition-colors'>
       <div className='max-w- 7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <motion.div
         className='text-center mb-15'
@@ -90,10 +90,10 @@ const Menu = () => {
         whileInView={{opacity:1, y: 0}}
         transition={{duration: 0.8}}
         viewport={{once: true}}>
-          <h2 className='text-4xl sm:text-5xl font-bold text-gray-900 mb-4'>
+          <h2 className='text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-200 mb-4 transition-colors'>
             Featured Menu
           </h2>
-          <p className='text-xl text-gray-600 max-w-wxl mx-auto'>
+          <p className='text-xl text-gray-600 dark:text-gray-400 max-w-wxl mx-auto transition-colors'>
           Discover our carefully curated selection of premium coffees, fresh pastries, and delicious bites.
           </p>
         </motion.div>
@@ -107,7 +107,7 @@ const Menu = () => {
           {menuItems.map((item, index) => (
             <motion.div
             key={index}
-            className='group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden'
+            className='group bg-white dark:bg-gray-900 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden'
             variants={itemVariants}
             whileHover={{y: -8}}>
               <div className='relative overflow-hidden'>
@@ -118,16 +118,16 @@ const Menu = () => {
                     Popular
                   </div>
                 )}
-                <div className='absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center space-x-1'>
+                <div className='absolute top-4 right-4 bg-white/90 dark:bg-gray-900/90 transition-all backdrop-blur-sm rounded-lg px-2 py-1 flex items-center space-x-1'>
                   <Star className='h-4 w-4 text-yellow-500 full-current' />
-                  <span className='text-sm font-semibold text-gray-800'>
+                  <span className='text-sm font-semibold text-gray-800 dark:text-gray-200 transition-colors'>
                     {item.rating}
                   </span>
                 </div>
               </div>
               <div className='p-6'>
                   <div className='flex justify-between items-start mb-2'>
-                    <h3 className='text-xl font-bold text-gray-900 group-hover:text-amber-600 transition-colors duration-300'>
+                    <h3 className='text-xl font-bold text-gray-900 dark:text-gray-200 group-hover:text-amber-600 transition-colors duration-300'>
                       {item.name}
                     </h3>
                     <span className='text-2xl font-bold text-amber-600'>
@@ -135,16 +135,16 @@ const Menu = () => {
                     </span>
                   </div>
 
-                  <p className='text-gray-600 mb-4 leading-relaxed'>
+                  <p className='text-gray-600 dark:text-gray-400 mb-4 leading-relaxed transition-colors'>
                     {item.description}
                   </p>
 
                   <div className='flex justify-between items-center'>
-                    <span className='inline-block bg-stone-100 text-stone-800 px-3 py-1 rounded-full text-sm font-medium'>
+                    <span className='inline-block bg-stone-100 dark:bg-gray-700 dark:text-gray-200 text-stone-800 transition-colors px-3 py-1 rounded-full text-sm font-medium'>
                       {item.category}
                     </span>
 
-                    <motion.button className='bg-amber-600 hover:bg-amber-700 text-white p-2 rounded-full transition-colors duration-300'
+                    <motion.button className='bg-amber-600 hover:bg-amber-700 text-white p-2 rounded-full transition-colors duration-300 cursor-pointer'
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 0.95}}>
                       <Plus className='h-5 w-5' />
@@ -162,7 +162,7 @@ const Menu = () => {
         transition={{duration: 0.6, delay: 0.2}}
         viewport={{once: true}}>
           <motion.button
-          className='bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl'
+          className='bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer'
           whileHover={{scale: 1.05, y: -2}}
           whileTap={{scale: 0.95}}>
             View Full Menu

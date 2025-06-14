@@ -29,7 +29,7 @@ const Navbar = () => {
     };
   return (
     <motion.div 
-    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrollPosition > 50 ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
+    className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isMenuOpen ? 'bg-transparent backdrop-blur-md' : ''} ${scrollPosition > 50 ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent'}`}
     initial={{y: -100}}
     animate={{y: 0}}
     transition={{duration: 0.6}}>
@@ -40,7 +40,7 @@ const Navbar = () => {
                 className='flex items-center space-x-2'
                 whileHover={{scale: 1.05}}>
                     <Coffee className={`h-8 w-8 ${scrollPosition > 50 ? 'text-amber-600' : 'text-white'}`} />
-                    <span className={`text-xl font-bold ${scrollPosition > 50 ? 'text-gray-900' : 'text-white'}`}>
+                    <span className={`text-xl font-bold transition-colors ${scrollPosition > 50 ? 'text-gray-900 dark:text-gray-200' : 'text-white'}`}>
                         Azim Coffee Shop
                     </span>
                 </motion.div>
@@ -51,7 +51,7 @@ const Navbar = () => {
                         <motion.button
                         key={index}
                         onClick={() => scrollToSection(item.href)}
-                        className={`transition-colors duration-200 hover:text-amber-600 ${scrollPosition > 50 ? 'text-gray-700' : 'text-white'}`}
+                        className={`transition-colors duration-200 hover:text-amber-600 cursor-pointer ${scrollPosition > 50 ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}
                         whileHover={{y: -2}}
                         whileTap={{y: 0}}>
                             {item.name}
@@ -59,7 +59,7 @@ const Navbar = () => {
                         ))}
                         <motion.button
                         onClick={() => setDarkMode(!darkMode)}
-                        className={`p-2 rounded-full transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 hover:bg-gray-100' : 'text-white hover:bg-white/20'}`}
+                        className={`p-2 rounded-full transition-colors duration-200 cursor-pointer ${scrollPosition > 50 ? 'text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700' : 'text-white hover:bg-white/20'}`}
                         whileHover={{scale: 1.1}}
                         whileTap={{scale: 0.95}}>
                             {darkMode ? <Sun className='h-5 w-5' /> : <Moon className='h-5 w-5' />}
@@ -70,14 +70,14 @@ const Navbar = () => {
                 <div className='md:hidden flex items-center space-x-2'>
                     <motion.button
                     onClick={() => setDarkMode(!darkMode)}
-                    className={`p-2 rounded-full transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 hover-bg-gray-100' : 'text-white hover:bg-white/20'}`}
+                    className={`p-2 rounded-full transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 hover-bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-700' : 'text-white hover:bg-white/20'}`}
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 0.95}}>
                         {darkMode ? <Sun className='h-5 w-5' /> : <Moon className='h-5 w-5' />}
                     </motion.button>
                     <motion.button
                     onClick={() => dispatch(toggleMenu())}
-                    className={`p-2 transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700' : 'text-white'}`}
+                    className={`p-2 transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 dark:text-gray' : 'text-white'}`}
                     whileHover={{scale: 1.1}}
                     whileTap={{scale: 0.95}}>
                         {isMenuOpen ? <X className='h-6 w-6' /> : <Menu className='h-6 w-6' />}
@@ -87,7 +87,7 @@ const Navbar = () => {
         </div>
         {/* Mobile Navigation */}
         <motion.div
-        className='md:hidden bg-white/95 backdrop-blur-md shadow-lg'
+        className={`md:hidden transition-colors z-50 ${scrollPosition > 50 ? 'bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg' : 'bg-transparent backdrop-blur-md'}`}
         initial={{height: 0, opacity: 0}}
         animate={{height: isMenuOpen ? 'auto' : 0, opacity: isMenuOpen ? 1 : 0}}
         transition={{duration: 0.3}}
@@ -96,8 +96,8 @@ const Navbar = () => {
                 {navItems.map((item, index) => (
                     <motion.button
                     key={index}
-                    onClick={()=> scrollToSection(item.href)}
-                    className='block w-full text-left text-gray-700 hover:text-amber-600 transition-colors duration-200'
+                    onClick={() => scrollToSection(item.href)}
+                    className={`block w-full text-left transition-colors duration-200 ${scrollPosition > 50 ? 'text-gray-700 dark:text-gray-200' : 'text-white'}`}
                     whileHover={{x: 10}}>
                         {item.name}
                     </motion.button>
