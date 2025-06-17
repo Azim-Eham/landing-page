@@ -95,7 +95,7 @@ const About = () => {
 
             {/* Floating Stats */}
             <motion.div
-              className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-6 border border-gray-600 transition-colors"
+              className="absolute -bottom-6 -left-6 bg-white dark:bg-gray-700 rounded-2xl shadow-xl p-6 border border-gray-200 dark:border-gray-600 transition-colors"
               initial={{ opacity: 0, scale: 0.8 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
